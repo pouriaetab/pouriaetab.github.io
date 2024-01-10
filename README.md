@@ -23,4 +23,4 @@ If the model can predict employees likely to quit, it might be possible to ident
 | department | str | The employee's department |
 | salary | str | The employee's salary (low, medium, or high) |
 
-### *Plan Stage*
+### **Plan Stage**
