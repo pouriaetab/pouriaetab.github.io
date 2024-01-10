@@ -1,11 +1,8 @@
-# Data Scientist
+# Google Advanced
 
-### Education
-MS in Statistics, Data Science
+# ** Data Dictionary**
 
-### Professional Experience
-Performance Ops Analyst
-- A
-- B
-
-### Certificate
+# | Column Name | Type| Description |
+# | ---- | ----| -------|
+# | satisfaction_level | int64 | The employee’s self-reported satisfaction level [0-1] |
+# | last_evaluation | int64 | Score of employee's last performance review [0–1] |
