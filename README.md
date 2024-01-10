@@ -10,6 +10,7 @@ The goals in this project are to analyze the data collected by the HR department
 If the model can predict employees likely to quit, it might be possible to identify factors that contribute to their leaving. Because it is time-consuming and expensive to find, interview, and hire new employees, increasing employee retention will be beneficial to the company.
 ###### Data Dictionary
 The data set contrain 10 columns and 14,999 rows - each row is a different employee’s self-reported information.
+
 | Column Name | Type| Description |
 | :--- | :---| :---|
 | satisfaction_level | int64 | The employee’s self-reported satisfaction level [0-1] |
