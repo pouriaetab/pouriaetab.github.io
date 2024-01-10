@@ -25,7 +25,7 @@ The data set contrain 10 columns and 14,999 rows - each row is a different emplo
 | salary | str | The employee's salary (low, medium, or high) |
 
 ### **Plan Stage**
-```
+```python
 # Import packages
 ### YOUR CODE HERE ### 
 
