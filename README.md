@@ -78,111 +78,104 @@ response = requests.get(raw_url)
 data = StringIO(response.text)
 # Read the CSV into a DataFrame
 df0 = pd.read_csv(data)
-df0.head()
+df0.head().style.set_table_styles([
+    {'selector': 'table', 'props': [('max-width', '80%')]}
+])
 ```
 
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+<style type="text/css">
+#T_907cd table {
+  max-width: 80%;
+}
 </style>
-<table border="1" class="dataframe">
+<table id="T_907cd">
   <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>satisfaction_level</th>
-      <th>last_evaluation</th>
-      <th>number_project</th>
-      <th>average_montly_hours</th>
-      <th>time_spend_company</th>
-      <th>Work_accident</th>
-      <th>left</th>
-      <th>promotion_last_5years</th>
-      <th>Department</th>
-      <th>salary</th>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_907cd_level0_col0" class="col_heading level0 col0" >satisfaction_level</th>
+      <th id="T_907cd_level0_col1" class="col_heading level0 col1" >last_evaluation</th>
+      <th id="T_907cd_level0_col2" class="col_heading level0 col2" >number_project</th>
+      <th id="T_907cd_level0_col3" class="col_heading level0 col3" >average_montly_hours</th>
+      <th id="T_907cd_level0_col4" class="col_heading level0 col4" >time_spend_company</th>
+      <th id="T_907cd_level0_col5" class="col_heading level0 col5" >Work_accident</th>
+      <th id="T_907cd_level0_col6" class="col_heading level0 col6" >left</th>
+      <th id="T_907cd_level0_col7" class="col_heading level0 col7" >promotion_last_5years</th>
+      <th id="T_907cd_level0_col8" class="col_heading level0 col8" >Department</th>
+      <th id="T_907cd_level0_col9" class="col_heading level0 col9" >salary</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>0.38</td>
-      <td>0.53</td>
-      <td>2</td>
-      <td>157</td>
-      <td>3</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>sales</td>
-      <td>low</td>
+      <th id="T_907cd_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_907cd_row0_col0" class="data row0 col0" >0.380000</td>
+      <td id="T_907cd_row0_col1" class="data row0 col1" >0.530000</td>
+      <td id="T_907cd_row0_col2" class="data row0 col2" >2</td>
+      <td id="T_907cd_row0_col3" class="data row0 col3" >157</td>
+      <td id="T_907cd_row0_col4" class="data row0 col4" >3</td>
+      <td id="T_907cd_row0_col5" class="data row0 col5" >0</td>
+      <td id="T_907cd_row0_col6" class="data row0 col6" >1</td>
+      <td id="T_907cd_row0_col7" class="data row0 col7" >0</td>
+      <td id="T_907cd_row0_col8" class="data row0 col8" >sales</td>
+      <td id="T_907cd_row0_col9" class="data row0 col9" >low</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>0.80</td>
-      <td>0.86</td>
-      <td>5</td>
-      <td>262</td>
-      <td>6</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>sales</td>
-      <td>medium</td>
+      <th id="T_907cd_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_907cd_row1_col0" class="data row1 col0" >0.800000</td>
+      <td id="T_907cd_row1_col1" class="data row1 col1" >0.860000</td>
+      <td id="T_907cd_row1_col2" class="data row1 col2" >5</td>
+      <td id="T_907cd_row1_col3" class="data row1 col3" >262</td>
+      <td id="T_907cd_row1_col4" class="data row1 col4" >6</td>
+      <td id="T_907cd_row1_col5" class="data row1 col5" >0</td>
+      <td id="T_907cd_row1_col6" class="data row1 col6" >1</td>
+      <td id="T_907cd_row1_col7" class="data row1 col7" >0</td>
+      <td id="T_907cd_row1_col8" class="data row1 col8" >sales</td>
+      <td id="T_907cd_row1_col9" class="data row1 col9" >medium</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>0.11</td>
-      <td>0.88</td>
-      <td>7</td>
-      <td>272</td>
-      <td>4</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>sales</td>
-      <td>medium</td>
+      <th id="T_907cd_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_907cd_row2_col0" class="data row2 col0" >0.110000</td>
+      <td id="T_907cd_row2_col1" class="data row2 col1" >0.880000</td>
+      <td id="T_907cd_row2_col2" class="data row2 col2" >7</td>
+      <td id="T_907cd_row2_col3" class="data row2 col3" >272</td>
+      <td id="T_907cd_row2_col4" class="data row2 col4" >4</td>
+      <td id="T_907cd_row2_col5" class="data row2 col5" >0</td>
+      <td id="T_907cd_row2_col6" class="data row2 col6" >1</td>
+      <td id="T_907cd_row2_col7" class="data row2 col7" >0</td>
+      <td id="T_907cd_row2_col8" class="data row2 col8" >sales</td>
+      <td id="T_907cd_row2_col9" class="data row2 col9" >medium</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>0.72</td>
-      <td>0.87</td>
-      <td>5</td>
-      <td>223</td>
-      <td>5</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>sales</td>
-      <td>low</td>
+      <th id="T_907cd_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_907cd_row3_col0" class="data row3 col0" >0.720000</td>
+      <td id="T_907cd_row3_col1" class="data row3 col1" >0.870000</td>
+      <td id="T_907cd_row3_col2" class="data row3 col2" >5</td>
+      <td id="T_907cd_row3_col3" class="data row3 col3" >223</td>
+      <td id="T_907cd_row3_col4" class="data row3 col4" >5</td>
+      <td id="T_907cd_row3_col5" class="data row3 col5" >0</td>
+      <td id="T_907cd_row3_col6" class="data row3 col6" >1</td>
+      <td id="T_907cd_row3_col7" class="data row3 col7" >0</td>
+      <td id="T_907cd_row3_col8" class="data row3 col8" >sales</td>
+      <td id="T_907cd_row3_col9" class="data row3 col9" >low</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>0.37</td>
-      <td>0.52</td>
-      <td>2</td>
-      <td>159</td>
-      <td>3</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>sales</td>
-      <td>low</td>
+      <th id="T_907cd_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_907cd_row4_col0" class="data row4 col0" >0.370000</td>
+      <td id="T_907cd_row4_col1" class="data row4 col1" >0.520000</td>
+      <td id="T_907cd_row4_col2" class="data row4 col2" >2</td>
+      <td id="T_907cd_row4_col3" class="data row4 col3" >159</td>
+      <td id="T_907cd_row4_col4" class="data row4 col4" >3</td>
+      <td id="T_907cd_row4_col5" class="data row4 col5" >0</td>
+      <td id="T_907cd_row4_col6" class="data row4 col6" >1</td>
+      <td id="T_907cd_row4_col7" class="data row4 col7" >0</td>
+      <td id="T_907cd_row4_col8" class="data row4 col8" >sales</td>
+      <td id="T_907cd_row4_col9" class="data row4 col9" >low</td>
     </tr>
   </tbody>
 </table>
-</div>
+
 
 
 
@@ -351,7 +344,8 @@ df0.describe()
 df0 = df0.rename(columns={'Work_accident': 'work_accident',
                           'average_montly_hours': 'average_monthly_hours',
                           'time_spend_company': 'tenure',
-                          'Department': 'department'})
+                          'Department': 'department',
+                          'number_project' : 'total_projects'})
 # Check for missing values helper function
 def null_columns(df):
     """
@@ -478,7 +472,7 @@ result
       <td>0.010151</td>
     </tr>
     <tr>
-      <th>number_project</th>
+      <th>total_projects</th>
       <td>0.000000</td>
       <td>0.000000</td>
     </tr>
