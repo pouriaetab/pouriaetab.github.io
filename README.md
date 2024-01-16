@@ -557,8 +557,22 @@ plt.show()
 
 
 ```python
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+plt.figure(figsize=(6, 6))
+plt.title('Boxplot to detect outliers for tenure', fontsize=12)
+plt.xticks(fontsize=12)
+plt.yticks(fontsize=12)
+sns.boxplot(x=df1['tenure'])
+plt.show()
 ```
+
+
+    
+![png](README_files/README_15_0.png)
+    
+
 
 
 ```python
