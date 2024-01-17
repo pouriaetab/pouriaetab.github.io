@@ -3,7 +3,7 @@
 #- jekyll-remote-theme # add this line to the plugins list if you already have one
 #gem "github-pages", group: :jekyll_plugins
 
-#title: Pouria Emami Tabrizi
+title: ''
 #logo: 
 #description:
 #show_downloads: true
