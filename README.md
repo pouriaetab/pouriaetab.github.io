@@ -889,8 +889,9 @@ The above boxplots and scatterplots result from a function displaying plots for 
 | 1    | 6              | 371                | 3.09%              | 18.63%             |&nbsp;|&nbsp;|1     | 6      | 109        | 0.91%              | 5.47%              |
 | 1    | 7              | 145                | 1.21%              | 7.28%              |&nbsp;|&nbsp;|&nbsp;|&nbsp;  |&nbsp;      |&nbsp;              |&nbsp;              |
 |&nbsp;|&nbsp;          |&nbsp;              |&nbsp;              |&nbsp;              |&nbsp;|&nbsp;|&nbsp;|&nbsp;  |&nbsp;      |&nbsp;              |&nbsp;              |  
-  
 
+
+  
 | left | total_projects | total_projects_sum | overall_percentage | percentage_by_left |      |      | left | tenure | tenure_sum | overall_percentage | percentage_by_left |
 |------|----------------|--------------------|--------------------|--------------------|------|----- |------|--------|------------|--------------------|--------------------|
 | 0    | 2              | 725                | 6.05%              | 7.25%              |&nbsp;|&nbsp;|0     | 2      |2879        |24.01%              |28.79%              |
