@@ -1,24 +1,28 @@
 ## Google Advanced Data Analytics Capstone  
 <!-- jupyter nbconvert --to markdown README.ipynb -->
-## Table of Contents
-- [Introduction](#Salifort-Motors-Employee-Retention-Project)
-    - [About the Company](#About-the-Company)
-    - [Business Scenario and Problem](#Business-Scenario-and-Problem)
-    - [Data Dictionary](#Data-Dictionary)
-- [Import and Load Dataset](#Import-and-Load-Dataset)
+## Table of Contents  
+
+* TOC
+{:toc}  
+
+- [Introduction](Salifort-Motors-Employee-Retention-Project)
+    - [About the Company](About-the-Company)
+    - [Business Scenario and Problem](Business-Scenario-and-Problem)
+    - [Data Dictionary](Data-Dictionary)
+- [Import and Load Dataset](Import-and-Load-Dataset)
 - [Exploratory Data Analysis (EDA) and Data Cleaning](#Exploratory-Data-Analysis-(EDA)-and-Data-Cleaning)
-    - [Basic information and descriptive statistics](#Basic-information-and-descriptive-statistics)
-    - [Rename columns and identify missing and duplicated values](#Rename-columns-and-identify-missing-and-duplicated-values)
-    - [Check outliers](#Check-outliers)
-    - [Visual data exploration](#Visual-data-exploration)
-    - [Bonus data exploration](#Bonus-data-exploration)
-    - [Insights](#Insights)
-- [Model Construction](#Model-Construction)
+    - [Basic information and descriptive statistics](Basic-information-and-descriptive-statistics)
+    - [Rename columns and identify missing and duplicated values](Rename-columns-and-identify-missing-and-duplicated-values)
+    - [Check outliers](Check-outliers)
+    - [Visual data exploration](Visual-data-exploration)
+    - [Bonus data exploration](Bonus-data-exploration)
+    - [Insights](Insights)
+- [Model Construction](Model-Construction)
     - [Logistic Regression Model](#Logistic-Regression-Model)
-    - [Tree-based Model](#Tree-based-Model)
-        - [Decision Tree](#Decision-Tree)
-        - [Feature Engineered Decision Tree](#Feature-Engineered-Decision-Tree)
-- [Results and Evaluation](#Results-and-Evaluation)
+    - [Tree-based Model](Tree-based-Model)
+        - [Decision Tree](Decision-Tree)
+        - [Feature Engineered Decision Tree](Feature-Engineered-Decision-Tree)
+- [Results and Evaluation](Results-and-Evaluation)
 
 #### Salifort Motors Employee Retention Project
 ##### **About the Project**
