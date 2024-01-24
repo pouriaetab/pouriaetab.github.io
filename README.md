@@ -880,7 +880,7 @@ The above boxplots and scatterplots result from a function displaying plots for 
 <!--#4 -->
 - The tables below aim to provide additional information about the 'total_projects' and 'tenure' variables. In the right table, it is evident that when 'left' is set to 1, the majority of employees belong to tenures of 3, 4, and 5. This aligns with the observations from the boxplot of 'tenure' by 'total_projects', with 'left' as the hue.  
 
-Table with 'left' = 1  
+*Table with 'left' = 1*  
 
 | left | total_projects | total_projects_sum | overall_percentage | percentage_by_left |      |      | left | tenure | tenure_sum | overall_percentage | percentage_by_left |
 |------|----------------|--------------------|--------------------|--------------------|------|----- |------|--------|------------|--------------------|--------------------|
@@ -893,7 +893,7 @@ Table with 'left' = 1
 |&nbsp;|&nbsp;          |&nbsp;              |&nbsp;              |&nbsp;              |&nbsp;|&nbsp;|&nbsp;|&nbsp;  |&nbsp;      |&nbsp;              |&nbsp;              |  
 
 
-Table with 'left' = 0  
+*Table with 'left' = 0*  
 
 | left | total_projects | total_projects_sum | overall_percentage | percentage_by_left |      |      | left | tenure | tenure_sum | overall_percentage | percentage_by_left |
 |------|----------------|--------------------|--------------------|--------------------|------|----- |------|--------|------------|--------------------|--------------------|
