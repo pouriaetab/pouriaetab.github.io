@@ -879,7 +879,9 @@ The above boxplots and scatterplots result from a function displaying plots for 
 - Among employees who have left, those with a 'total_projects' count of 6 and 7 constitute the group that is, as a whole, the most overworked when compared to employees grouped by their total number of projects.  
 <!--#4 -->
 - The tables below aim to provide additional information about the 'total_projects' and 'tenure' variables. In the right table, it is evident that when 'left' is set to 1, the majority of employees belong to tenures of 3, 4, and 5. This aligns with the observations from the boxplot of 'tenure' by 'total_projects', with 'left' as the hue.  
-  
+
+Table with 'left' = 1  
+
 | left | total_projects | total_projects_sum | overall_percentage | percentage_by_left |      |      | left | tenure | tenure_sum | overall_percentage | percentage_by_left |
 |------|----------------|--------------------|--------------------|--------------------|------|----- |------|--------|------------|--------------------|--------------------|
 | 1    | 2              | 857                | 7.15%              | 43.04%             |      |      |1     | 2      | 31         | 0.26%              | 1.56%              |
@@ -891,7 +893,8 @@ The above boxplots and scatterplots result from a function displaying plots for 
 |&nbsp;|&nbsp;          |&nbsp;              |&nbsp;              |&nbsp;              |&nbsp;|&nbsp;|&nbsp;|&nbsp;  |&nbsp;      |&nbsp;              |&nbsp;              |  
 
 
-  
+Table with 'left' = 0  
+
 | left | total_projects | total_projects_sum | overall_percentage | percentage_by_left |      |      | left | tenure | tenure_sum | overall_percentage | percentage_by_left |
 |------|----------------|--------------------|--------------------|--------------------|------|----- |------|--------|------------|--------------------|--------------------|
 | 0    | 2              | 725                | 6.05%              | 7.25%              |&nbsp;|&nbsp;|0     | 2      |2879        |24.01%              |28.79%              |
