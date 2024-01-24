@@ -1186,7 +1186,8 @@ The following code snippet serves as a supplementary resource for a deeper dive 
 
 The first row of the example output below presents the distribution of four quantile data points within the sales department. This analysis considers both factors of whether an employee is currently with the company and whether they have left the company, all while taking into account if the employee has received a promotion within the last 5 years.
 
-
+<details>
+  <summary>Click to view code</summary>
 ```python
 pd.set_option('display.max_colwidth', None)
 
@@ -1298,155 +1299,7 @@ def select_stats(df, combinations, col1, col2, col3, statistic, quantiles=None):
 result, combinations = custom_filter_and_merge(df1, 'left', 'promotion_last_5years', 'department')
 stats_rows_df = select_stats(result, combinations, 'left', 'promotion_last_5years', 'department', 'quantile', quantiles=[0.25, 0.5, 0.75, 1])
 stats_rows_df
-
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>promotion_last_5years</th>
-      <th>department</th>
-      <th>department_quantiles</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>sales</td>
-      <td>{'0.25': 16.0, '0.5': 29.0, '0.75': 42.0, '1': 55.0}</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>accounting</td>
-      <td>{'0.25': 10.0, '0.5': 10.0, '0.75': 10.0, '1': 10.0}</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>1</td>
-      <td>hr</td>
-      <td>{'0.25': 11.0, '0.5': 11.0, '0.75': 11.0, '1': 11.0}</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>1</td>
-      <td>technical</td>
-      <td>{'0.25': 6.0, '0.5': 11.0, '0.75': 16.0, '1': 21.0}</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>1</td>
-      <td>support</td>
-      <td>{'0.25': 4.5, '0.5': 8.0, '0.75': 11.5, '1': 15.0}</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>1</td>
-      <td>management</td>
-      <td>{'0.25': 9.5, '0.5': 18.0, '0.75': 26.5, '1': 35.0}</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>1</td>
-      <td>marketing</td>
-      <td>{'0.25': 27.0, '0.5': 27.0, '0.75': 27.0, '1': 27.0}</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>1</td>
-      <td>RandD</td>
-      <td>{'0.25': 21.0, '0.5': 21.0, '0.75': 21.0, '1': 21.0}</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>1</td>
-      <td>IT</td>
-      <td>{'0.25': 2.0, '0.5': 2.0, '0.75': 2.0, '1': 2.0}</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>sales</td>
-      <td>{'0.25': 1068.75, '0.5': 1590.5, '0.75': 2112.25, '1': 2634.0}</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>accounting</td>
-      <td>{'0.25': 207.25, '0.5': 305.5, '0.75': 403.75, '1': 502.0}</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>hr</td>
-      <td>{'0.25': 204.0, '0.5': 295.0, '0.75': 386.0, '1': 477.0}</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0</td>
-      <td>technical</td>
-      <td>{'0.25': 750.0, '0.5': 1111.0, '0.75': 1472.0, '1': 1833.0}</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0</td>
-      <td>support</td>
-      <td>{'0.25': 606.75, '0.5': 902.5, '0.75': 1198.25, '1': 1494.0}</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0</td>
-      <td>management</td>
-      <td>{'0.25': 125.5, '0.5': 200.0, '0.75': 274.5, '1': 349.0}</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>0</td>
-      <td>IT</td>
-      <td>{'0.25': 321.5, '0.5': 487.0, '0.75': 652.5, '1': 818.0}</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>0</td>
-      <td>product_mng</td>
-      <td>{'0.25': 226.5, '0.5': 343.0, '0.75': 459.5, '1': 576.0}</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>0</td>
-      <td>marketing</td>
-      <td>{'0.25': 217.5, '0.5': 323.0, '0.75': 428.5, '1': 534.0}</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>0</td>
-      <td>RandD</td>
-      <td>{'0.25': 210.75, '0.5': 336.5, '0.75': 462.25, '1': 588.0}</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+</details>
 
 ###### **Insights**
 The departure of most employees from the company appears to be associated with longer-than-average working hours and a higher number of projects. These factors may be the primary contributors to the overall lower satisfaction levels at Salifort Motors. However, it's worth noting that employees with tenures of 6 years or longer tend to remain with the company. Further exploration of data pertaining to these groups could provide insights into the factors that contribute to their retention.
