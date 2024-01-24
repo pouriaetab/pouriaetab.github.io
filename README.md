@@ -893,7 +893,8 @@ The above boxplots and scatterplots result from a function displaying plots for 
 - In France, the typical workweek is 35 hours per week. However, considering the global nature of the company, it has been decided to focus on an average of 40 hours per week. Additionally, France has eleven national holidays, similar to the U.S. Taking into account the total holidays in a year, I established a regular monthly hours threshold of 169.33 hours. In the boxplot of 'last_evaluation' and 'average_monthly_hours', we observe that the median for obtaining a high evaluation starts to increase from 165-235 hours for employees who have left the company. This suggests potential dissatisfaction with incentives or encouragement to achieve higher monthly work hours. Furthermore, when examining the scatterplot of these variables, it becomes evident that employees who have left the company are primarily concentrated in two areas. The first group consists of those who worked below the 169.33 hours per month threshold and had evaluations between approximately 4.5 to 5.8. The second concentration is among employees who worked above approximately 270 hours monthly, with evaluations ranging from 0.7 to 1.  
 - Among employees who have left, those with a 'total_projects' count of 6 and 7 constitute the group that is, as a whole, the most overworked when compared to employees grouped by their total number of projects.  
 <!--#4 -->
-- The tables below aim to provide additional information about the 'total_projects' and 'tenure' variables. In the right table, it is evident that when 'left' is set to 1, the majority of employees belong to tenures of 3, 4, and 5. This aligns with the observations from the boxplot of 'tenure' by 'total_projects', with 'left' as the hue.  
+- The tables below aim to provide additional information about the 'total_projects' and 'tenure' variables. In the right table, it is evident that when 'left' is set to 1, the majority of employees belong to tenures of 3, 4, and 5. This aligns with the observations from the boxplot of 'tenure' by 'total_projects', with 'left' as the hue.
+  
 | left | total_projects | total_projects_sum | overall_percentage | percentage_by_left |      |      | left | tenure | tenure_sum | overall_percentage | percentage_by_left |
 |------|----------------|--------------------|--------------------|--------------------|------|----- |------|--------|------------|--------------------|--------------------|
 | 1    | 2              | 857                | 7.15%              | 43.04%             |      |      |1     | 2      | 31         | 0.26%              | 1.56%              |
@@ -903,6 +904,7 @@ The above boxplots and scatterplots result from a function displaying plots for 
 | 1    | 6              | 371                | 3.09%              | 18.63%             |&nbsp;|&nbsp;|1     | 6      | 109        | 0.91%              | 5.47%              |
 | 1    | 7              | 145                | 1.21%              | 7.28%              |&nbsp;|&nbsp;|&nbsp;|&nbsp;  |&nbsp;      |&nbsp;              |&nbsp;              |
 |&nbsp;|&nbsp;          |&nbsp;              |&nbsp;              |&nbsp;              |&nbsp;|&nbsp;|&nbsp;|&nbsp;  |&nbsp;      |&nbsp;              |&nbsp;              |  
+  
 
 | left | total_projects | total_projects_sum | overall_percentage | percentage_by_left |      |      | left | tenure | tenure_sum | overall_percentage | percentage_by_left |
 |------|----------------|--------------------|--------------------|--------------------|------|----- |------|--------|------------|--------------------|--------------------|
@@ -2574,11 +2576,6 @@ For the model, explore other feature engineering strategies, test different comb
 For the company, steps include acquiring new features and making strategic changes in hiring, training, and event programs to boost engagement and inclusivity. These changes should aim to create a more positive and engaging work environment, focusing on the growth and advancement of every employee.
 
 
-
-```python
-
-```
-
 <!--
 - [Decision Tree](#Decision-Tree)
         - [Random Forest](#Random-Forest)
@@ -3172,8 +3169,3 @@ For another project, you could try building a K-means model on this data and ana
 # ax1.set_xlabel("Importance")
 # plt.show()
 -->
-
-
-```python
-
-```
