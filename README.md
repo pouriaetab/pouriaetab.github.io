@@ -1178,87 +1178,8 @@ plt.show()
 
 The paired histograms above indicate a negligible difference in the proportion of employees who received promotions within the last five years compared to those who did not. A similar trend is observed for work accidents across various departments. The subsequent pie charts will allow for a clearer examination of these observations. A closer analysis reveals some notable disparities, such as 82 out of 1000 employees in the management department receiving promotions, in contrast to 0 and 2 out of 1000 in the product management and IT departments, respectively. As for work accidents, the proportions range from 133 to 171 out of 1000 employees across departments, showing less variance than the promotion data.  
 
-![First Image](README_files/dept_promote_pie.png) ![Second Image](README_files/dept_work_pie.png)
-<!-- 
-def create_pie_chart(df, col1, col2, colorchoice, **kwargs):
-    """
-    Generates a pie chart showing the proportion of col2 in each col1 category.
+![First Image](README_files/dept_promote_pie.png) ![Second Image](README_files/dept_work_pie.png)  
 
-    This function takes a DataFrame and columns specifying col1 and col2 status, 
-    then calculates the proportion of promotions per col1, scaled to a base of 1000. 
-    It creates a pie chart with these proportions, allowing for different color schemes.
-
-    Parameters:
-    df (pandas.DataFrame): The DataFrame containing the data.
-    col1 (str): The name of the column representing col1 categories.
-    col2 (str): The name of the column representing col2 categories.
-    colorchoice (str): The color scheme for the pie chart. Options are 'mixed', 'green', 'blue', or any other string for the default scheme.
-    **kwargs: Additional keyword arguments. Can include 'title' for the chart title and 'proportion_base' for setting the proportion based (default is 1000).
-
-    Returns:
-    None: This function does not return anything. It displays a pie chart.
-
-    Example:
-    create_promotion_pie_chart(df, 'department', 'promotion_last_5years', 'green', title='Department Promotion Rates', proportion_base=500)
-
-    This example will generate a pie chart with shades of green, titled 'Department Promotion Rates', showing the proportion of promotions in each department, scaled to 500.
-    """
-    # Data processing
-    grouped_df = df.groupby([col1, col2])[col2].count().reset_index(name='count')
-    total_count = grouped_df.groupby(col1)['count'].sum()
-    col2_count = grouped_df[grouped_df[col2] == 1].groupby(col1)['count'].sum()
-
-    # Calculate the proportion of col2 per col1 and scale to the provided base
-    proportion_base = kwargs.get('proportion_base', 1000)
-    col2_proportion_out_of_1000 = (col2_count / total_count * proportion_base).round(2)
-    col2_proportion_out_of_1000.fillna(0, inplace=True)
-
-    # Round down the values (Floor)
-    col2_proportion_rounded = col2_proportion_out_of_1000.apply(np.floor)
-    
-    # Define color palettes
-    colors_accessible = ['orange', 'skyblue', 'limegreen', 'red', 'purple', 'brown', 'pink', 'grey', 'olive']
-    colors_shades_of_green = ['lightgreen', 'mediumseagreen', 'forestgreen', 'darkgreen', 'green', 'limegreen']
-    colors_shades_of_blue = plt.cm.Blues(np.linspace(0.2, 0.8, len(col2_proportion_rounded)))
-
-    # Choose color scheme based on colorchoice
-    if colorchoice == 'mixed':
-        colors = colors_accessible
-    elif colorchoice == 'green':
-        colors = colors_shades_of_green
-    elif colorchoice == 'blue':
-        colors = colors_shades_of_blue
-    else:
-        colors = None  # Default color scheme
-
-    # For autopct, calculate the actual number of promotions
-    def autopct_formatter(pct, allvals):
-        absolute = int(np.round(pct/100.*np.sum(allvals)))
-        return "{:d}".format(absolute)
-    
-    # Create a pie chart
-    plt.figure(figsize=(5, 5))
-    plt.pie(col2_proportion_rounded, labels=col2_proportion_rounded.index, 
-            autopct=lambda pct: autopct_formatter(pct, col2_proportion_rounded), 
-            startangle=120, colors=colors, radius=.95,
-            textprops={'fontsize': kwargs.get('label_size', 8)})
-
-    # Set title if provided
-    if 'title' in kwargs:
-        plt.title(kwargs['title'], fontsize=8)
-    else: 
-        plt.title(f"Proportion of '{col2}' Out of {proportion_base} by '{col1}' (Rounded Down)", fontsize=9)
-
-    plt.annotate('Values are rounded down to the nearest whole number', 
-                 xy=(0.5, 0.05), xycoords='axes fraction', ha='center', 
-                 va='center', fontsize=8, color='red')
-
-    # Display the plot
-    plt.show()
-
-create_pie_chart(df1, 'department', 'promotion_last_5years', 'mixed', title='Proportion of Employees Promoted per Department (Per 1000 Employees)')
-create_pie_chart(df1, 'department', 'work_accident', 'green', title='Proportion of Employees with Work Accident per Department (Per 1000 Employees)')
--->
 
 ###### **Bonus data exploration**
 The following code snippet serves as a supplementary resource for a deeper dive into data analysis. This code is designed to showcase basic statistical measurements, such as quartiles and maximum values, for selected arbitrary variables.  
