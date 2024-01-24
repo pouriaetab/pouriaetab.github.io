@@ -902,6 +902,7 @@ Table with 'left' = 0
 | 0    | 4              | 3448               | 28.75%             | 34.48%             |&nbsp;|&nbsp;|0     | 4      | 1510       | 12.59%             | 15.1%              |
 | 0    | 5              | 1890               | 15.76%             | 18.9%              |&nbsp;|&nbsp;|0     | 5      | 580        | 4.84%              | 5.8%               |
 | 0    | 6              | 455                | 3.79%              | 4.55%              |&nbsp;|&nbsp;|0     | 6      | 433        | 3.61%              | 4.33%              |  
+
 <!--#5-6 -->
 - Among employees currently employed, the most significant percentage for average_monthly_hours lies within the discrete ranges of [150, 200) at 28.6% and [200, 250) at 26.29%. This pattern is evident in the boxplot depicting 'average_monthly_hours' by 'tenure'.
 - Furthermore, when the 'left' value is set to 0, the medians for each 'tenure' group in relation to 'average_monthly_hours' exhibit relatively close proximity. This observation implies a level of uniformity in the data distribution for this particular group across different categories. It may also indicate that employees who remain with the company tend to work an average of approximately 199.5 hours per month.
