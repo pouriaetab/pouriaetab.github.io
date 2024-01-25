@@ -1115,7 +1115,7 @@ def create_annotated_countplot(df, col1, col2, fig_size=(10, 6), bar_width=0.8, 
     plt.show()
 
 create_annotated_countplot(df1, 'salary', 'left', fig_size=(11, 6), bar_width=0.6, annotation_font_size=8.5, 
-                           group_gap=0, annotation_x=0.56, annotation_y=0.932)
+                           group_gap=0, annotation_x=0.545, annotation_y=0.932)
 
 ```
 
