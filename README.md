@@ -10,7 +10,7 @@
 
 This dataset was exclusively utilized for the Google Advanced Data Analytics capstone project, not featured in preceding courses. My objective is to demonstrate my passion for data analysis, showcasing a penchant for uncovering insights and innovating within the data realm. This curiosity extends to diverse data types. When faced with unfamiliar subject matter, my strength lies in self-education—immersing myself in academic papers, video trainings, original source documents, and reading related books. I've refrained from presenting all my codes here to maintain brevity, but behind each stated number or percentage there is a detailed code.
 
-This portfolio project aims to offer partial insight into my thought process when working with a dataset. Additionally, I am committed to continuous improvement; while this project is considered complete today, I acknowledge its potential enhancement. I am open to summarizing it into an executive page to highlight key points as needed. I look forward to the prospect of discussing or collaborating with you on exciting projects at Stripe.  
+This portfolio project aims to offer partial insight into my thought process when working with a dataset. Additionally, I am committed to continuous improvement; while this project is considered complete today, I acknowledge its potential enhancement. I am open to summarizing it into an executive page to highlight key points as needed. I look forward to the prospect of discussing or collaborating with you on exciting projects. 
 
 ##### **About the Company** 
 Salifort Motors is a fictional French-based alternative energy vehicle manufacturer. Its global workforce of over 100,000 employees research, design, construct, validate, and distribute electric, solar, algae, and hydrogen-based vehicles. Salifort’s end-to-end vertical integration model has made it a global leader at the intersection of alternative energy and automobiles.  
@@ -840,8 +840,8 @@ def plot_data(df, threshold, target_col, rows_to_display=None):
             sns.scatterplot(data=df1, x=x_axis_var, y=y_axis_var, hue=target_col, 
                             alpha=0.4, ax=axes[i, 1])
             axes[i, 1].set_title(f'{x_axis_var} by {y_axis_var}', fontsize=12)
-            axes[i, 1].set_xlabel(x_axis_var, fontsize=10)
-            axes[i, 1].set_ylabel(y_axis_var, fontsize=10)
+            axes[i, 1].set_xlabel(x_axis_var, fontsize=11)
+            axes[i, 1].set_ylabel(y_axis_var, fontsize=11)
             axes[i, 1].legend(title=target_col, title_fontsize=9, bbox_to_anchor=(1, 1), loc='upper right')
 
             # Check if 'average_monthly_hours' is in either x_axis_var or y_axis_var
