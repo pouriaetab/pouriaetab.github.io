@@ -833,16 +833,16 @@ def plot_data(df, threshold, target_col, rows_to_display=None):
                             width=0.3, flierprops=dict(markerfacecolor='cyan', markersize=3, marker='o')).tick_params(axis='both', labelsize=9)
             axes[i, 0].invert_yaxis()
             axes[i, 0].set_title(f'{x_axis_var} by {y_axis_var}', fontsize='11')
-            axes[i, 0].set_xlabel(x_axis_var, fontsize=9)
-            axes[i, 0].set_ylabel(y_axis_var, fontsize=9)
-            axes[i, 0].legend(title=target_col, title_fontsize=9, loc='upper right')
+            axes[i, 0].set_xlabel(x_axis_var, fontsize=11)
+            axes[i, 0].set_ylabel(y_axis_var, fontsize=11)
+            axes[i, 0].legend(title=target_col, title_fontsize=10, loc='upper right')
 
             sns.scatterplot(data=df1, x=x_axis_var, y=y_axis_var, hue=target_col, 
                             alpha=0.4, ax=axes[i, 1])
             axes[i, 1].set_title(f'{x_axis_var} by {y_axis_var}', fontsize=12)
             axes[i, 1].set_xlabel(x_axis_var, fontsize=11)
             axes[i, 1].set_ylabel(y_axis_var, fontsize=11)
-            axes[i, 1].legend(title=target_col, title_fontsize=9, bbox_to_anchor=(1, 1), loc='upper right')
+            axes[i, 1].legend(title=target_col, title_fontsize=10, bbox_to_anchor=(1, 1), loc='upper right')
 
             # Check if 'average_monthly_hours' is in either x_axis_var or y_axis_var
             if 'average_monthly_hours' in [x_axis_var, y_axis_var]:
