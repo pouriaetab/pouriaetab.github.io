@@ -40,15 +40,15 @@ The [dataset](https://drive.google.com/drive/folders/1gvylI3XqpDFPW0I4zSJbKZmVhJ
 
 
 ```python
-# Data manipulation
+# Manipulate data
 import numpy as np
 import pandas as pd
 
-# Data visualization
+# Visualize data
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Data modeling
+# Model data
 from xgboost import XGBClassifier
 from xgboost import XGBRegressor
 from xgboost import plot_importance
@@ -56,22 +56,31 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 
-# Model evaluation and decision tree visualization
+# Evaluate model and visualize decision tree
 from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score,\
 f1_score, confusion_matrix, ConfusionMatrixDisplay, classification_report
 from sklearn.metrics import roc_auc_score, roc_curve
 from sklearn.tree import plot_tree
 
-# Save models
+# Save model
 import pickle
 
-# Handle HTTP requests and input/output operations
+# Handle HTTP request and input/output operations
 import requests
 from io import StringIO
 
-# Generating cobinations and Cartesian products
+# Generate combination and Cartesian product
 from itertools import combinations, product
+
+# Specify return type for clarity
+from typing import Tuple
+
+# Track and record error
+import logging
+
+# Introspect data
+import inspect
 
 # Display all of the columns in dataframes
 pd.set_option('display.max_columns', None)
@@ -363,10 +372,10 @@ def null_columns(df):
     Display columns with missing values in a user-friendly format.
 
     Parameters:
-    - df: pandas DataFrame
+    - df (pd.DataFrame): The input DataFrame.
 
     Returns:
-    None
+    None (prints text).
     """
     # Columns with missing values
     null_cols = df.columns[df.isna().sum() > 0]
@@ -391,10 +400,10 @@ def duplicate_percentage(df):
     Print the percentage of duplicated rows in a DataFrame.
 
     Parameters:
-    - df: pandas DataFrame
+    - df (pd.DataFrame): The input DataFrame.
 
     Returns:
-    None
+    None (prints texts).
     """
     dup_sum = df.duplicated().sum()
     dup_pct = (dup_sum / len(df)) * 100
@@ -415,11 +424,11 @@ def likelihood_analysis(df, target_col):
     Perform likelihood analysis using Bayes' theorem.
 
     Parameters:
-    - df: pandas DataFrame
-    - target_col: str, the column for which likelihood analysis is performed
+    - df (pd.DataFrame): The input DataFrame.
+    - target_col (str): The column for which likelihood analysis is performed.
 
     Returns:
-    - likelihood_df: pandas DataFrame, showing the conditional probabilities
+    - likelihood_df (pd.DataFrame): pandas DataFrame, showing the conditional probabilities.
     """
     # Create an empty DataFrame to store conditional probabilities
     likelihood_df = pd.DataFrame(index=df.columns, columns=df[target_col].unique())
@@ -550,10 +559,10 @@ def create_static_boxplots(df):
     Create static boxplots for non-binary and non-object features.
 
     Parameters:
-    - df: pandas DataFrame
+    - df (pd.DataFrame): The input DataFrame.
 
     Returns:
-    - None (displays the plots)
+    None (displays the plots).
     """
     # Get non-object columns
     numeric_columns = df.select_dtypes(['float64', 'int64']).columns
@@ -622,11 +631,11 @@ def find_and_display_outliers(df, display_info=True):
     Find and display outliers in non-binary and non-object columns of a DataFrame.
 
     Parameters:
-    - data: pandas DataFrame
-    - display_info: boolean, True to print information, False to suppress printing
+    - df (pd.DataFrame): The input DataFrame.
+    - display_info (bool): Set to True to print information, False to suppress printing.
 
     Returns:
-    - A tuple of two dictionaries containing the lower and upper limits for outliers in each column
+    - Tuple of two dictionaries: The first dictionary contains the lower limits for outliers in each column, and the second dictionary contains the upper limits.
     """
     # Select non-binary and non-object columns
     numeric_columns = df.select_dtypes(['float64', 'int64']).columns
@@ -720,15 +729,15 @@ def plot_data(df, threshold, target_col, rows_to_display=None):
     Create a set of plots for variable pairs based on correlation and visualize the distribution of data.
 
     Parameters:
-        df (pd.DataFrame): The input DataFrame containing the variables.
-        threshold (float): The correlation threshold for selecting variable pairs.
-        target_col (str): The target column for hue in boxplots.
-        rows_to_display (Optional[Tuple[int, int]]): A tuple specifying the range of rows to display.
+        - df (pd.DataFrame): The input DataFrame.
+        - threshold (float): The correlation threshold for selecting variable pairs.
+        - target_col (str): The target column for hue in boxplots.
+        - rows_to_display (Optional[Tuple[int, int]]): A tuple specifying the range of rows to display.
             If None, all rows will be displayed. The tuple should be in the format (start_row, end_row),
             where start_row is the index of the first row to display, and end_row is the index of the last row to display.
 
     Returns:
-        None: Displays a set of plots based on the specified parameters.
+        None (displays a set of plots based on the specified parameters).
 
     Examples:
         # Display all rows
@@ -1051,22 +1060,22 @@ def create_annotated_countplot(df, col1, col2, fig_size=(10, 6), bar_width=0.8, 
     Annotations, bar width, and gaps between bars are customizable.
 
     Parameters:
-    df (pandas.DataFrame): The DataFrame containing the data.
-    col1 (str): The name of the first categorical column for grouping data on the x-axis.
-    col2 (str): The name of the second categorical column for hue (color) in the plot.
-    fig_size (tuple): The size of the figure (width, height). Default is (10, 6).
-    bar_width (float): The width of the bars. Default is 0.8.
-    annotation_font_size (int): The font size of the annotations on top of the bars. Default is 8.
-    group_gap (float): The gap between groups of bars. Default is 0.2.
-    annotation_x (float): The x-coordinate for the position of the annotation box. Default is 0.565.
-    annotation_y (float): The y-coordinate for the position of the annotation box. Default is 0.82.
+        -df (pd.DataFrame): The input DataFrame.
+        -col1 (str): The name of the first categorical column for grouping data on the x-axis.
+        -col2 (str): The name of the second categorical column for hue (color) in the plot.
+        -fig_size (tuple): The size of the figure (width, height). Default is (10, 6).
+        -bar_width (float): The width of the bars. Default is 0.8.
+        -annotation_font_size (int): The font size of the annotations on top of the bars. Default is 8.
+        -group_gap (float): The gap between groups of bars. Default is 0.2.
+        -annotation_x (float): The x-coordinate for the position of the annotation box. Default is 0.565.
+        -annotation_y (float): The y-coordinate for the position of the annotation box. Default is 0.82.
 
     Returns:
-    None: The function creates and shows a matplotlib plot.
+    None (The function creates and shows a matplotlib plot)
 
     Example:
-    create_annotated_countplot(df1, 'salary', 'left', fig_size=(12, 8), bar_width=0.7, 
-                               annotation_font_size=10, group_gap=0.3, annotation_x=0.6, annotation_y=0.85)
+        # create_annotated_countplot(df1, 'salary', 'left', fig_size=(12, 8), bar_width=0.7, 
+                                     annotation_font_size=10, group_gap=0.3, annotation_x=0.6, annotation_y=0.85)
     """
     # Create a copy of the DataFrame
     nn = df.copy()
@@ -1239,14 +1248,14 @@ def custom_filter_and_merge(df, col1, col2, col3):
     'col2' and 'col3' columns.
 
     Parameters:
-    - df (pd.DataFrame): Input DataFrame.
-    - col1 (str): The first column used for grouping, with unique fixed values.
-    - col2 (str): The second column used for grouping and counting occurrences.
-    - col3 (str): The third column used for grouping and counting occurrences.
+        - df (pd.DataFrame): The input DataFrame.
+        - col1 (str): The first column used for grouping, with unique fixed values.
+        - col2 (str): The second column used for grouping and counting occurrences.
+        - col3 (str): The third column used for grouping and counting occurrences.
 
     Returns:
-    - pd.DataFrame: Resulting DataFrame with counts and merged data.
-    - list: List of all paired combinations of unique values in 'col2' and 'col3'.
+        - pd.DataFrame: Resulting DataFrame with counts and merged data.
+        - list: List of all paired combinations of unique values in 'col2' and 'col3'.
     """
     # Get unique values for 'tenure' and 'left'
     unique_tenure_values = df[col3].unique()
@@ -1274,16 +1283,16 @@ def select_stats(df, combinations, col1, col2, col3, statistic, quantiles=None):
     The function takes three columns and returns the selected statistics for all rows with matching paired combinations of col2 and col3.
 
     Parameters:
-    - df (pd.DataFrame): Input DataFrame.
-    - combinations (list): List of paired combinations of unique values.
-    - col1 (str): Name of the first column for grouping.
-    - col2 (str): Name of the second column for grouping.
-    - col3 (str): Name of the third column for grouping.
-    - statistic (str): The statistic to calculate ('max', 'min', 'mean', 'sum', 'std', 'median', 'mode', 'count', 'quantile').
-    - quantiles (list): List of quantiles to calculate if 'quantile' is chosen.
+        - df (pd.DataFrame): The input DataFrame.
+        - combinations (list): List of paired combinations of unique values.
+        - col1 (str): Name of the first column for grouping.
+        - col2 (str): Name of the second column for grouping.
+        - col3 (str): Name of the third column for grouping.
+        - statistic (str): The statistic to calculate ('max', 'min', 'mean', 'sum', 'std', 'median', 'mode', 'count', 'quantile').
+        - quantiles (list): List of quantiles to calculate if 'quantile' is chosen.
 
     Returns:
-    - pd.DataFrame: Resulting DataFrame with rows based on the specified statistic, sorted by 'col1'.
+        - pd.DataFrame: Resulting DataFrame with rows based on the specified statistic, sorted by 'col1'.
     """
     stat_rows = []
 
@@ -1848,12 +1857,65 @@ The following section details splitting the data into training and testing sets,
 
 
 ```python
-# Select y 'left' as response variables and other predicted variables as X
-y = df1_logreg['left']
-X = df1_logreg.drop('left', axis=1)
+def create_splits(df: pd.DataFrame, y_col: str, test_size: float, random_state:int) -> Tuple[pd.Series, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
+    """
+    Splits a DataFrame into training and testing sets.
 
-# Split the data into training set and testing set
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, stratify=y, random_state=42)
+    Parameters:
+    - df(pd.DataFrame): The input DataFrame.
+    - y_col (str): The name of the target/response column.
+    - test_size (float): Proportion of the dataset to include in the test split (between 0.0 and 1.0).
+    - random_state (int): Controls the shuffling applied to the data before applying the split for reproducibility.
+
+    Returns:
+    - Tuple containing: y (pd.Series), X (pd.DataFrame), X_train (pd.DataFrame), X_test (pd.DataFrame), y_train (pd.Series), y_test (pd.Series)
+
+    Raises:
+    - ValueError: IF any of the inputs are not valid.
+    """
+    # Retrive type hints and remove return type annotation
+    type_hints = inspect.getfullargspec(create_splits).annotations
+    type_hints.pop('return', None)
+    
+    # Validate types of input parameters
+    for param in type_hints:
+        if not isinstance(locals()[param], type_hints[param]):
+            raise ValueError(f"'{param}' must be of type {type_hints[param].__name__}")
+            
+    # Validate y_col input
+    if y_col not in df.columns:
+        raise ValueError(f"Column '{y_col}' not found in the DataFrame.")
+
+    try: 
+        y = df[y_col]
+        X = df.drop(y_col, axis=1)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, stratify=y, random_state=random_state)
+        return y, X, X_train, X_test, y_train, y_test
+    except Exception as e:
+        logging.error(f"Error in creating splits: {e}")
+        raise
+        
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+# Select y 'left' as response variables and other predicted variables as X and split the data into training set and testing set
+y, X, X_train, X_test, y_train, y_test =  create_splits(df1_logreg, 'left', 0.25 , 42)
 
 # Construct a logistic regression model and fit it to the training dataset
 logreg = LogisticRegression(random_state=42, max_iter=500).fit(X_train, y_train)
@@ -1877,7 +1939,7 @@ plt.show()
 
 
     
-![png](README_files/README_36_0.png)
+![png](README_files/README_40_0.png)
     
 
 
@@ -1959,8 +2021,8 @@ dt1 = GridSearchCV(dt, cv_params, scoring=scoring, cv=4, refit='roc_auc')
 dt1.fit(X_train, y_train)
 ```
 
-    CPU times: user 1.83 s, sys: 79 ms, total: 1.91 s
-    Wall time: 1.99 s
+    CPU times: user 1.78 s, sys: 62.7 ms, total: 1.84 s
+    Wall time: 1.82 s
 
 
 
@@ -1971,7 +2033,7 @@ dt1.fit(X_train, y_train)
                              'min_samples_leaf': [2, 5, 1],
                              'min_samples_split': [2, 4, 6]},
                  refit='roc_auc',
-                 scoring={'roc_auc', 'accuracy', 'recall', 'f1', 'precision'})
+                 scoring={'f1', 'precision', 'roc_auc', 'recall', 'accuracy'})
 
 
 
@@ -2348,8 +2410,8 @@ dt2 = GridSearchCV(dt, cv_params, scoring=scoring, cv=4, refit='roc_auc')
 dt2.fit(X_train, y_train)
 ```
 
-    CPU times: user 1.33 s, sys: 68.2 ms, total: 1.4 s
-    Wall time: 1.47 s
+    CPU times: user 1.3 s, sys: 35.7 ms, total: 1.34 s
+    Wall time: 1.37 s
 
 
 
@@ -2360,7 +2422,7 @@ dt2.fit(X_train, y_train)
                              'min_samples_leaf': [2, 5, 1],
                              'min_samples_split': [2, 4, 6]},
                  refit='roc_auc',
-                 scoring={'roc_auc', 'accuracy', 'recall', 'f1', 'precision'})
+                 scoring={'f1', 'precision', 'roc_auc', 'recall', 'accuracy'})
 
 
 
@@ -2489,7 +2551,7 @@ plt.show()
 
 
     
-![png](README_files/README_69_0.png)
+![png](README_files/README_73_0.png)
     
 
 
