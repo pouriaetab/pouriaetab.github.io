@@ -733,8 +733,8 @@ def plot_data(df, threshold, target_col, rows_to_display=None):
         - threshold (float): The correlation threshold for selecting variable pairs.
         - target_col (str): The target column for hue in boxplots.
         - rows_to_display (Optional[Tuple[int, int]]): A tuple specifying the range of rows to display.
-            If None, all rows will be displayed. The tuple should be in the format (start_row, end_row),
-            where start_row is the index of the first row to display, and end_row is the index of the last row to display.
+        If None, all rows will be displayed. The tuple should be in the format (start_row, end_row),
+        where start_row is the index of the first row to display, and end_row is the index of the last row to display.
 
     Returns:
         None (displays a set of plots based on the specified parameters).
@@ -2055,12 +2055,13 @@ Next, a function can be written to efficiently extract all the scores from the g
 ```python
 def make_results(model_name:str, model_object, metric:str):
     '''
-    Arguments:
-        model_name (str): The designated name for the model in the output table.
-        model_object: A fitted GridSearchCV object.
-        metric (str): The chosen evaluation metric, which can be precision, recall, f1, accuracy, or AUC.
+    Parameters:
+        - model_name (str): The designated name for the model in the output table.
+        - model_object: A fitted GridSearchCV object.
+        - metric (str): The chosen evaluation metric, which can be precision, recall, f1, accuracy, or AUC.
   
-    Returns a pandas DataFrame containing F1, recall, precision, accuracy, and AUC scores for the model 
+    Returns:
+    - Pandas DataFrame containing: F1, recall, precision, accuracy, and AUC scores for the model 
     that achieved the best mean 'metric' score across all validation folds.  
     '''
     # Create dictionary that maps input metric to actual metric name in GridSearchCV
@@ -2099,7 +2100,6 @@ def make_results(model_name:str, model_object, metric:str):
 
 
 ```python
-##Use the function just defined to get all the scores from grid search.
 # Get all CV scores
 dt1_cv_results = make_results('decision tree cv', dt1, 'auc')
 dt1_cv_results
@@ -2467,7 +2467,7 @@ dt1_importances = pd.DataFrame(dt1.best_estimator_.feature_importances_,
                                 )
 dt1_importances = dt1_importances.sort_values(by='gini_importance', ascending=False)
 
-# Only extract the features with importances > 0
+# Extract the features with importances > 0
 dt1_importances = dt1_importances[dt1_importances['gini_importance'] != 0]
 dt1_importances
 ```
