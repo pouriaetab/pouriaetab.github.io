@@ -1979,10 +1979,8 @@ The following sections will focus on implementing Decision Tree.
 
 
 ```python
-
-y = df1_encode['left']
-X = df1_encode.drop('left', axis=1)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, stratify=y, random_state=0)
+# Select y 'left' as response variables and other predicted variables as X and split the data into training set and testing set
+y, X, X_train, X_test, y_train, y_test =  create_splits(df1_encode, 'left', 0.25 , 0)
 
 # Instantiate model
 dt = DecisionTreeClassifier(random_state=0)
@@ -2006,8 +2004,8 @@ dt1 = GridSearchCV(dt, cv_params, scoring=scoring, cv=4, refit='roc_auc')
 dt1.fit(X_train, y_train)
 ```
 
-    CPU times: user 1.78 s, sys: 62.7 ms, total: 1.84 s
-    Wall time: 1.82 s
+    CPU times: user 1.74 s, sys: 45.3 ms, total: 1.79 s
+    Wall time: 1.84 s
 
 
 
@@ -2362,17 +2360,13 @@ df2_encode.head()
 
 
 
-
-```python
-y = df2_encode['left']
-X = df2_encode.drop('left', axis=1)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, stratify=y, random_state=0)
-```
-
 ###### ***Feature Engineered Decision Tree***
 
 
 ```python
+# Select y 'left' as response variables and other predicted variables as X and split the data into training set and testing set
+y, X, X_train, X_test, y_train, y_test =  create_splits(df2_encode, 'left', 0.25 , 0)
+
 # Instantiate model
 dt = DecisionTreeClassifier(random_state=0)
 
@@ -2395,8 +2389,8 @@ dt2 = GridSearchCV(dt, cv_params, scoring=scoring, cv=4, refit='roc_auc')
 dt2.fit(X_train, y_train)
 ```
 
-    CPU times: user 1.3 s, sys: 35.7 ms, total: 1.34 s
-    Wall time: 1.37 s
+    CPU times: user 1.3 s, sys: 39.9 ms, total: 1.34 s
+    Wall time: 1.35 s
 
 
 
@@ -2536,7 +2530,7 @@ plt.show()
 
 
     
-![png](README_files/README_70_0.png)
+![png](README_files/README_69_0.png)
     
 
 
