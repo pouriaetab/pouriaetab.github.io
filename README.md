@@ -1899,21 +1899,6 @@ def create_splits(df: pd.DataFrame, y_col: str, test_size: float, random_state:i
 
 
 ```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
 # Select y 'left' as response variables and other predicted variables as X and split the data into training set and testing set
 y, X, X_train, X_test, y_train, y_test =  create_splits(df1_logreg, 'left', 0.25 , 42)
 
@@ -1939,7 +1924,7 @@ plt.show()
 
 
     
-![png](README_files/README_40_0.png)
+![png](README_files/README_37_0.png)
     
 
 
@@ -2551,7 +2536,7 @@ plt.show()
 
 
     
-![png](README_files/README_73_0.png)
+![png](README_files/README_70_0.png)
     
 
 
