@@ -369,7 +369,7 @@ df0 = df0.rename(columns={'Work_accident': 'work_accident',
 # Check for missing values helper function
 def null_columns(df):
     """
-    Display columns with missing values in a user-friendly format.
+    Display columns with missing values, the total count, and the percentage of missing values in descending order.
 
     Parameters:
     - df (pd.DataFrame): The input DataFrame.
@@ -377,17 +377,28 @@ def null_columns(df):
     Returns:
     None (prints text).
     """
-    # Columns with missing values
-    null_cols = df.columns[df.isna().sum() > 0]
+    # Calculate the number of missing values for each column
+    null_counts = df.isna().sum()
 
+    # Calculate the percentage of missing values for each column
+    null_percentage = (df.isna().sum() / len(df)) * 100
+
+    # Combine counts and percentages into a DataFrame
+    null_info = pd.DataFrame({'Count_Null': null_counts, 'Percentage': null_percentage})
+
+    # Filter columns with missing values and sort them
+    null_info = null_info[null_info['Count_Null'] > 0].sort_values(by=['Count_Null'], ascending=False)
+
+    # Format the 'Percentage' column to two decimal places with a '%' sign
+    null_info['Percentage'] = null_info['Percentage'].apply(lambda x: f"{x:.2f}%")
+    
     # Display user-friendly message
-    if len(null_cols) > 0:
-        print("Columns with missing values:")
-        for col in null_cols:
-            print(f"- {col}")
+    if not null_info.empty:
+        print("Columns with missing values, their counts, and percentages (sorted):")
+        print(null_info)
     else:
         print("No columns with missing values.")
-null_columns(df0)
+null_columns(df)
 ```
 
     No columns with missing values.
@@ -1172,7 +1183,6 @@ One noteworthy observation from this plot is that a smaller percentage of employ
 
 
 ```python
-
 # Create a figure with two subplots, side by side
 plt.figure(figsize=(22, 8))
 
@@ -2004,8 +2014,8 @@ dt1 = GridSearchCV(dt, cv_params, scoring=scoring, cv=4, refit='roc_auc')
 dt1.fit(X_train, y_train)
 ```
 
-    CPU times: user 1.74 s, sys: 45.3 ms, total: 1.79 s
-    Wall time: 1.84 s
+    CPU times: user 2.09 s, sys: 98.9 ms, total: 2.19 s
+    Wall time: 1.79 s
 
 
 
@@ -2016,7 +2026,7 @@ dt1.fit(X_train, y_train)
                              'min_samples_leaf': [2, 5, 1],
                              'min_samples_split': [2, 4, 6]},
                  refit='roc_auc',
-                 scoring={'f1', 'precision', 'roc_auc', 'recall', 'accuracy'})
+                 scoring={'precision', 'accuracy', 'recall', 'f1', 'roc_auc'})
 
 
 
@@ -2389,8 +2399,8 @@ dt2 = GridSearchCV(dt, cv_params, scoring=scoring, cv=4, refit='roc_auc')
 dt2.fit(X_train, y_train)
 ```
 
-    CPU times: user 1.3 s, sys: 39.9 ms, total: 1.34 s
-    Wall time: 1.35 s
+    CPU times: user 1.35 s, sys: 12.9 ms, total: 1.36 s
+    Wall time: 1.37 s
 
 
 
@@ -2401,7 +2411,7 @@ dt2.fit(X_train, y_train)
                              'min_samples_leaf': [2, 5, 1],
                              'min_samples_split': [2, 4, 6]},
                  refit='roc_auc',
-                 scoring={'f1', 'precision', 'roc_auc', 'recall', 'accuracy'})
+                 scoring={'precision', 'accuracy', 'recall', 'f1', 'roc_auc'})
 
 
 
