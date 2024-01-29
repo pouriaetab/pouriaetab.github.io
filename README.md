@@ -1,4 +1,4 @@
-## Google Advanced Data Analytics Capstone  
+## Google Advanced Data Analytics Capstone  ([View Github Repositories](https://github.com/pouriaetab?tab=repositories))
 <!-- jupyter nbconvert --to markdown README.ipynb -->
 ## Table of Contents  
 
@@ -398,7 +398,7 @@ def null_columns(df):
         print(null_info)
     else:
         print("No columns with missing values.")
-null_columns(df)
+null_columns(df0)
 ```
 
     No columns with missing values.
